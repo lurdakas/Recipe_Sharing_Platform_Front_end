@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Recipe</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+
+         <header> 
+                <ul class="nav-links">
+                    <li><a href="./index.html">Main</a></li>
+                    <li><a href="#Create">Create</a></li>
+                    <li><a href="#RecipesList">Recipes</a></li>
+                </ul>
+         </header>
+
+<section>
+
+    <div class="createpage-text">
+        <h1>Create <span> your</span> Recipes</h1>
+        <p>Unleash your inner chef and share your culinary masterpieces with the world. Our easy-to-use interface lets you craft
+            detailed recipes with step-by-step instructions, photos, and personal tips. Inspire others by showcasing your unique
+            flavors and innovative cooking techniques. Whether it's a family secret or a new experiment, every recipe has a
+            story. Start creating today and watch your recipes become a part of our vibrant community's kitchen adventures!</p>
+    </div>
+
+</section>
+
+    
+ <section class="createRecipe" id="Create"> 
+     
+            </div>
+            <div class="card-body">
+                <form action="" method="post" id="createRecipeForm">
+                    
+                    <h4 class="text-center">Add New Recipe</h4>
+                    <input type="hidden" id="recipe-id" name="id"> 
+                    <div class="form-group">
+                        <label for="Title">Title</label>
+                        <input type="text" class="form-control" id="Title" name="Title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Description">Description</label>
+                        <textarea name="text" class="form-control" id="Description" name="Description" required maxlength="500"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="Instructions">Instructions</label>
+                        <textarea name="text" class="form-control" id="Instructions" name="Instructions" required maxlength="500"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="Prep_time">Prep_time</label>
+                        <input type="number" class="form-control" id="Prep_time" name="Prep_time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Cook_time">Cook_time</label>
+                        <input type="number" class="form-control" id="Cook_time" name="Cook_time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Servings">Servings</label>
+                        <input type="number" class="form-control" id="Servings" name="Servings" required>
+                    </div>
+                    <button type="submit" id="formBtn" class="btn ">Submit</button>
+                </form>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="RecipesList" id="RecipesList">
+
+            <div class="create-card">
+
+                    <div class="recipe-card-body">
+                        <table class="table" >
+
+                        <h4>Recicpes List</h4>
+
+                        <thead>
+                            <tr>
+                                <th>#id</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Instructions</th>
+                                <th>Prep Time</th>
+                                <th>Cook Time</th>
+                                <th>Servings</th>
+                                <th>Tools</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="recipe-list"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+</section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../main.js"></script>
+    <script>    editRecipe();
+    </script>
+</body>
+</html>
+
+
