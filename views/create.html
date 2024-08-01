@@ -27,8 +27,10 @@
          <header> 
                 <ul class="nav-links">
                     <li><a href="./index.html">Main</a></li>
-                    <li><a href="#Create">Create</a></li>
+                    <li><a href="#Create">CreateYourOwn</a></li>
                     <li><a href="#RecipesList">Recipes</a></li>
+                    <li><a href="./ingredients.html">Ingredients</a></li>
+
                 </ul>
          </header>
 
@@ -44,7 +46,6 @@
 
 </section>
 
-    
  <section class="createRecipe" id="Create"> 
      
             </div>
@@ -54,35 +55,50 @@
                     <h4 class="text-center">Add New Recipe</h4>
                     <input type="hidden" id="recipe-id" name="id"> 
                     <div class="form-group">
-                        <label for="Title">Title</label>
-                        <input type="text" class="form-control" id="Title" name="Title" required>
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" id="title" name="title" required>
                     </div>
                     <div class="form-group">
-                        <label for="Description">Description</label>
-                        <textarea name="text" class="form-control" id="Description" name="Description" required maxlength="500"></textarea>
+                        <label for="description">Description</label>
+                        <textarea name="text" class="form-control" id="description" name="description" required maxlength="500"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="Instructions">Instructions</label>
-                        <textarea name="text" class="form-control" id="Instructions" name="Instructions" required maxlength="500"></textarea>
+                        <label for="instructions">Instructions</label>
+                        <textarea name="text" class="form-control" id="instructions" name="instructions" required maxlength="500"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="Prep_time">Prep_time</label>
-                        <input type="number" class="form-control" id="Prep_time" name="Prep_time" required>
+                        <label for="prep_time">Prep_time</label>
+                        <input type="number" class="form-control" id="prep_time" name="prep_time" required>
                     </div>
                     <div class="form-group">
-                        <label for="Cook_time">Cook_time</label>
-                        <input type="number" class="form-control" id="Cook_time" name="Cook_time" required>
+                        <label for="cook_time">Cook_time</label>
+                        <input type="number" class="form-control" id="cook_time" name="cook_time" required>
                     </div>
                     <div class="form-group">
-                        <label for="Servings">Servings</label>
-                        <input type="number" class="form-control" id="Servings" name="Servings" required>
+                        <label for="servings">Servings</label>
+                        <input type="number" class="form-control" id="servings" name="servings" required>
                     </div>
-                    <button type="submit" id="formBtn" class="btn ">Submit</button>
+                
+                    <div class="form-group" id="ingredientsStyle">
+                        <label for="ingredients">Ingredients:</label>
+                        <ul id="ingredientList">
+                          </ul>
+                        <button type="button" id="addIngredient">Press To Add Ingredient</button>
+                      </div>
+
+                      <div>  
+                        <button type="submit" id="formBtn" class="btn ">Save</button>
+                    </div>
+
                 </form>
                 
             </div>
         </div>
     </section>
+    
+
+
+
 
     <section class="RecipesList" id="RecipesList">
 
@@ -91,7 +107,7 @@
                     <div class="recipe-card-body">
                         <table class="table" >
 
-                        <h4>Recicpes List</h4>
+                        <h4>Recipes List</h4>
 
                         <thead>
                             <tr>
@@ -112,14 +128,20 @@
             </div>
         </section>
 
-</section>
+
+
+
+      
+        
+
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="../main.js"></script>
-    <script>    editRecipe();
-    </script>
-</body>
-</html>
+    <script> editRecipe();</script>
+    </body>
+    
+    </html>
 
 

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Recipe</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+
+         <header> 
+                <ul class="nav-links">
+                    <li><a href="./index.html">Main</a></li>
+                    <li><a href="./create.html">Create</a></li>
+                </ul>
+         </header>
+
+<section>
+
+    <div class="createpage-text">
+        <h1>Ingredients </h1>
+    </div>
+</section>
+
+
+  
+
+
+        <section class="createIngredient">
+
+            <h4 class="text-center">Edit ingredient</h4>
+    
+            <form id="createIngredientForm">
+
+                <input type="hidden" id="ingredient-id" />
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required />
+                </div>
+               
+                <button type="submit" class="btn2">Update</button>
+            </form>
+    
+        </section>
+
+        <section class="IngredientsList" id="IngredientsList">
+            <div class="create-card">
+                <div class="ingredients-card-body">
+                    <table class="table">
+                        <h4>Ingredients List</h4>
+                        <thead>
+                            <tr>
+                                <th>#id</th>
+                                <th>Name</th>
+                                <th>Recipe Id</th>
+                                <th>Tools</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ingredients-list"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../ingredients.js"></script>
+    <script> editIngredient();</script>
+    </body>
+    
+    </html>
+
+

@@ -29,11 +29,16 @@ body{
     width: 100%;
     background: var(--bg-color);
     color: var(--text-color);
-    background-image: linear-gradient(to left, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url(pictures/avocado.jpg);
-   
-}
-header{
+    background-image: linear-gradient(to left, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url(pictures/black.png);   
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
+    height: 100%;
+    margin: 0;
+}
+
+header{
     position: fixed;
     top: 0;
     right: 0;
@@ -45,19 +50,16 @@ header{
     align-items: center;
     justify-content: space-between;
     transition: all .50s easy;
-
-
-    background-color: #4F3821;
-     
-
-
+    /* background-color: #858585; */
 }
+
 .logo{
     
     font-size: 33px;
     color: var(--main-color);
     font-weight: 700;
 }
+
 .nav-links{
     
     display: flex;
@@ -80,7 +82,7 @@ header{
     position: realtive;
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(to left, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url(pictures/organic-food-background-hand-drawn-concept-free-vector.jpg);
+    background-image: linear-gradient(to left, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url(pictures/vegetables-set-left-black-slate_1220-685.avif);
     background-size: cover;
     background-position: bottom center;
     display: flex;
@@ -88,11 +90,21 @@ header{
     justify-content: flex-start;
     /* margin: 200px; */
 
+
+
+}
+.home-text h1{
+    margin-left: 60px;
+
+
+
 }
 .home-text h5{
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 10px;
+    margin-left: 60px;
+
     text-transform: uppercase;
     letter-spacing: 6px;
     color: var(--main-color);
@@ -104,6 +116,9 @@ header{
     line-height: 30px;
     color: #0d0d0dab;
     margin-bottom: 35px;
+    margin-right: 620px;
+    margin-left: 60px;
+
     background: -webkit-linear-gradient(0deg,rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.25));
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -127,30 +142,28 @@ header{
 color: #cca160;
 
 }
-.card-body{
-    color: black;
-align-items: center;
-background-color: #978E80;
-margin: 150px;
-
-border: 5px solid #4644447d;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-
-
-}
 
 .btn{
     border-radius: 80%;
     background-color: white;
     color: black;
-    border: 5px solid #4644447d;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 
 }
 
-.edit{
+.btn2{
+
+    border-radius: 80%;
+    background-color: white;
+    color: black;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    margin: 15px;
+
+}
+
+.edit {
 
     border: none;
     color: rgb(0, 0, 0);
@@ -159,7 +172,6 @@ border: 5px solid #4644447d;
     margin: 2px 2px;
     cursor: pointer;
     border-radius: 80%;
-    border: 5px solid #4644447d;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
@@ -173,26 +185,126 @@ border: 5px solid #4644447d;
     text-align: center;
     margin: 2px 2px;
     cursor: pointer;
-    border: 5px solid #4644447d;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
 
 
 
-
-.create-card{
-
+.card-body {
     color: black;
-align-items: center;
-background-color: #978E80;
-margin: 150px;
+    align-items: center;
+    background-color: #fbfbfb;
+    margin: 150px;
 
-
-
-border: 5px solid #4644447d;
-    box-shadow: 0 5px #666;
+    border: 5px solid #fffefe;
     transform: translateY(4px);
 
-    }
+
+}
+
+.createIngredient{
+
+    color: black;
+    align-items: center;
+    background-color: #e7e2e2;
+    margin: 150px;
+
+    border: 5px solid #fffefe;
+    transform: translateY(4px);
+
+}
+
+.create-card {
+
+    color: #000000;
+    text-align: center;
+    align-items: center;
+    background-color: #fbfbfb;
+    margin: 150px;
+
+    border: 5px solid #fffefe;
+    transform: translateY(4px);
+
+}
+
+.recipeList h4{
+
+    font-size: 0px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: var(--main-color);
+}
+  
+#ingredientsStyle{
+
+    color: black;
+    background-color: #fbfbfb;
+    margin-top: 20px;
+    border: 5px solid #fffefe;
+    transform: translateY(4px);
+
+}
+
+.recipe-list{
+
+background-color: #000000;
+
+
+}
+
+
+.recipe-card {
+    width: 200px; 
+    height: 200px;
+    margin: 10px;
+    border: 1px solid #cca160;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+
+    width: calc(25% - 50px); 
+    margin: 10px;
+
+
+  }
+  
+  .recipe-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .recipe-card h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+  }
+  
+  .recipe-card.expanded {
+    width: 400px; 
+    height: auto;
+  }
+
+  .recipe-cards-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+  }
+  
+
+  #addIngredient{
+
+    /* border-radius: 90%; */
+    background-color: rgb(151, 150, 150);
+    color: black;
+    transform: translateY(4px);
+    box-shadow: 0 5px #666;
+  }
   

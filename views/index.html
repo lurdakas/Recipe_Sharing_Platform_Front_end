@@ -33,11 +33,11 @@
                 <ul class="nav-links">
                     <li><a href="#About">About</a></li>
                     <li><a href="#RecipeList">Recipes</a></li>
-                    <li><a href="./create.html">Create</a></li>
+                    <li><a href="./create.html">CreateYourOwn</a></li>
+                    <li><a href="./ingredients.html">Ingredients</a></li>
+
                 </ul>
-                <!-- <div class= "h-right">
-                    <div class="bx bx-menu" id="menu-icon"></div>
-                 </div> -->
+                
         </header>
     
         <section class="home" id="About">
@@ -55,42 +55,56 @@
         
         </section>
     
+        <section class="recipe-list" id="RecipeList">
 
-        <!-- <section class="RecipesList" id="RecipeList">
-
-            <div class="create-card">
-
-                    <div class="recipe-card-body">
-                        <table class="table">
-
-                        <h4>Recicpes List</h4>
-
-                        <thead>
-                            <tr>
-                                <th>#id</th>
-                                <th>Title</th>
-                                <th>Description</th>
-                                <th>Instructions</th>
-                                <th>Prep Time</th>
-                                <th>Cook Time</th>
-                                <th>Servings</th>
-                            </tr>
-                        </thead>
-                        <input type="hidden" id="recipe-id" name="id"> 
-
-                        <tbody id="recipe-list"></tbody>
-                    </table>
-                </div>
+            <div class="recipeList">
+                <h4>Recipes List</h4>
             </div>
-        </section> -->
 
-<!-- </section> -->
+        <div class="recipe-cards-container">
+
+            <div class="recipe-card" data-recipe-id="2">
+                <img src="../pictures/chickenCurry.jpg" alt="Recipe 1">
+                <h3>Chicken Curry</h3>
+                <div class="recipe-details"></div>
+            </div>
+
+            <div class="recipe-card" data-recipe-id="3">
+                <img src="../pictures/ceaserSalad.jpg" alt="Recipe 2">
+                <h3>Caesar Salad</h3>
+                <div class="recipe-details"></div>
+            </div>
+        
+            <div class="recipe-card" data-recipe-id="4">
+                <img src="../pictures/chocolateChip.jpg" alt="Recipe 3">
+                <h3>Chocolate Chip Cookies</h3>
+                <div class="recipe-details"></div>
+            </div>
+
+
+            <div class="recipe-card" data-recipe-id="5">
+                <img src="../pictures/beefTaco.jpg" alt="Recipe 4">
+                <h3>Beef Tacos</h3>
+                <div class="recipe-details"></div>
+            </div>
+        
+            <div class="recipe-card" data-recipe-id="18">
+                <img src="../pictures/Carbonara.jpg" alt="Recipe 5">
+                <h3>Spaghetti Carbonara</h3>
+                <div class="recipe-details"></div>
+            </div>
+
+
+        </div>
+
+        </section>
+        
 
 
 
 
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <!-- <script src="../main.js"></script> -->
+        <script src="../mainPage.js"></script>
 
 </body>
 </html>

@@ -35,50 +35,62 @@ async function fetchRecipes() {
 }
 
 
-async function saveRecipe (event){
+async function saveRecipe(event) {
 
     console.log("save");
     event.preventDefault();
 
     const id = document.getElementById('recipe-id') ? document.getElementById('recipe-id').value : null;
-    const title = document.getElementById('Title').value;
-    const description = document.getElementById('Description').value;
-    const instructions = document.getElementById('Instructions').value;
-    const prepTime = document.getElementById('Prep_time').value;
-    const cookTime = document.getElementById('Cook_time').value;
-    const servings = document.getElementById('Servings').value;
+    const title = document.getElementById('title').value;
+    const description = document.getElementById('description').value;
+    const instructions = document.getElementById('instructions').value;
+    const prepTime = document.getElementById('prep_time').value;
+    const cookTime = document.getElementById('cook_time').value;
+    const servings = document.getElementById('servings').value;
+    const ingredients = [];
+    const ingredientInputs = document.querySelectorAll('[name="ingredients[]"]');
+    ingredientInputs.forEach((input) => {
+        ingredients.push({
+            name: input.value,
+        });
+    });
+
     console.log(id);
     try {
         if (id) {
-            await axios.put(`${apiUrl}/${id}`, { title, description, instructions, prep_time: prepTime, cook_time: cookTime, servings });
+            await axios.put(`${apiUrl}/${id}`, { title, description, instructions, prep_time: prepTime, cook_time: cookTime, servings, ingredients });
         } else {
-            await axios.post(apiUrl, { title, description, instructions, prep_time: prepTime, cook_time: cookTime, servings });
+            await axios.post(apiUrl, { title, description, instructions, prep_time: prepTime, cook_time: cookTime, servings, ingredients });
         }
-        window.location.href = "http://127.0.0.1:5500/views/";
+        window.location.href = "http://127.0.0.1:5500/views/create.html";
     } catch (error) {
         console.error('Error saving recipe:', error);
     }
 }
 
 
+
+
+
+
 async function editRecipe() {
     console.log("Editing recipe");
-    let id = document.URL.split("=").pop();
+    const id = document.URL.split("=").pop()
     console.log(id);
     try {
         const response = await axios.get(`${apiUrl}/${id}`);
         const recipe = response.data;
 
         document.getElementById('recipe-id').value = recipe.id;
-        document.getElementById('Title').value = recipe.title;
-        document.getElementById('Description').value = recipe.description;
-        document.getElementById('Instructions').value = recipe.instructions;
-        document.getElementById('Prep_time').value = recipe.prep_time;
-        document.getElementById('Cook_time').value = recipe.cook_time;
-        document.getElementById('Servings').value = recipe.servings;
+        document.getElementById('title').value = recipe.title;
+        document.getElementById('description').value = recipe.description;
+        document.getElementById('instructions').value = recipe.instructions;
+        document.getElementById('prep_time').value = recipe.prep_time;
+        document.getElementById('cook_time').value = recipe.cook_time;
+        document.getElementById('servings').value = recipe.servings;
     } catch (error) {
         console.error('Error fetching recipe:', error);
-    }
+    }   
 }
 
 
@@ -114,6 +126,27 @@ async function deleteRecipe(id) {
 
 
 
+const addIngredientButton = document.getElementById('addIngredient');
+const ingredientList = document.getElementById('ingredientList');
+
+addIngredientButton.addEventListener('click', () => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <input type="text" name="ingredients[]" placeholder="Ingredient Name">
+      <button type="button" class="removeIngredient">Remove</button>
+    `;
+    ingredientList.appendChild(li);
+
+  // Add event listener for removing ingredients
+  const removeButton = li.querySelector('.removeIngredient');
+  removeButton.addEventListener('click', (event) => {
+    ingredientList.removeChild(li);
+  });
+});
+
+
+
+  
 
 
 document.addEventListener('DOMContentLoaded', fetchRecipes);
